@@ -5,13 +5,19 @@ import { ListsComponent } from './lists/lists.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AuthGaurd } from './_gaurds/auth.gaurd';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'members', component: MemberListComponent},
-  {path: 'members/:id', component: MemberDetailComponent},
-  {path: 'lists', component: ListsComponent},
-  {path: 'messages', component: MessagesComponent},
+  {path: '', 
+  runGuardsAndResolvers: 'always', 
+  canActivate: [AuthGaurd], 
+  children: [
+    {path: 'members', component: MemberListComponent},
+    {path: 'members/:id', component: MemberDetailComponent},
+    {path: 'lists', component: ListsComponent},
+    {path: 'messages', component: MessagesComponent},
+  ]},
   {path: '**', component: HomeComponent, pathMatch: 'full'},
 ];
 

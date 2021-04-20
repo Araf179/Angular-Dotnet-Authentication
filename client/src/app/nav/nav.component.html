@@ -1,29 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" routerLink="/">Dating App</a>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="accountService.currentUser$ | async">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Matches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lists</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" (click)="logout()">Logout</a>
-          </li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="accountService.currentUser$ | async">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+          <ng-container>
+            <li class="nav-item">
+              <a class="nav-link"  routerLink="/members" routerLinkActive='active'>Matches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/lists" routerLinkActive='active'>Lists</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/messages" routerLinkActive='active'>Messages</a>
+            </li>
+          </ng-container>
         </ul>        
       </div>
 
-      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" *ngIf="accountService.currentUser$ | async">
+      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" *ngIf="(accountService.currentUser$ | async) as user">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Welcome User
+              Welcome {{user.username | titlecase}}
             </a>
             <ul class="dropdown-menu " aria-labelledby="navbarDarkDropdownMenuLink">
               <li><a class="dropdown-item" href="#">Edit Profile</a></li>
@@ -52,7 +51,7 @@
         placeholder="Username"
         />
         
-        <button class="btn btn-outline-success" type="submit">Login</button>
+        <button class="btn btn-success" type="submit">Login</button>
     </form>
     </div>
   </nav>
