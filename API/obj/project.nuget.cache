@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TnvhvMNP7GWPk188uumJclQkrlkf8nNmF6SWA8kV9K9FKHuyfqez2EjstfrzA6Y+0pzNborObh6TWTsO/kc1og==",
+  "dgSpecHash": "fiUAmkdiWoSemr7n7xikGGjrv8GQlR3NEEPz7P86+HcGSe/RzWkm62LEUVJ6CkBXiPXO6epK8mQo3fMj9MSdYQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\arafs\\Desktop\\src\\datingapp\\Api\\API.csproj",
+  "projectFilePath": "C:\\Users\\arafs\\Desktop\\src\\datingapp\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arafs\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\arafs\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
