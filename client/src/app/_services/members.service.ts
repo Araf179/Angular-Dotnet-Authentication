@@ -3,11 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, JsonpClientBackend } from '@angular/common/http';
 import { Member } from '../_models/members';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: "Bearer " + JSON.parse(localStorage.getItem('user')).token
-  })
-}
+
 
 @Injectable({
   providedIn: 'root'
